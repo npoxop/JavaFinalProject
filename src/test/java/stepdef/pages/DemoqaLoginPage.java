@@ -1,13 +1,15 @@
-package pages;
+package stepdef.pages;
 
 
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
+import stepdef.InitDriver;
+import stepdef.StepsDefs;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class DemoqaLoginPage {
+public class DemoqaLoginPage  {
 
     public void getUrl() {
         open("https://demoqa.com/login");

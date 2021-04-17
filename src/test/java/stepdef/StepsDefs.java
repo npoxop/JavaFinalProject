@@ -3,14 +3,14 @@ package stepdef;
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.И;
 import io.cucumber.java.ru.Тогда;
-import pages.DemoqaHomePage;
-import pages.DemoqaLoginPage;
+import stepdef.pages.DemoqaHomePage;
+import stepdef.pages.DemoqaLoginPage;
 
 
 public class StepsDefs extends InitDriver {
 
-    private DemoqaLoginPage demoqaLoginPage = new DemoqaLoginPage();
-    private DemoqaHomePage demoqaHomePage = new DemoqaHomePage();
+    public  DemoqaLoginPage demoqaLoginPage = new DemoqaLoginPage();
+    public  DemoqaHomePage demoqaHomePage = new DemoqaHomePage();
 
     @Дано("^открывается страница Авторизации")
     public void checkElementGoogle() {
