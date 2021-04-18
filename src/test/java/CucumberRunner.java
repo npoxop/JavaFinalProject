@@ -8,11 +8,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/",
         glue = "stepdef",
-        tags = "@demoqaLogin",
+        tags = "@allProject",
         plugin = {"pretty", "html:test-output",
                 "json:target/cucumber-report/cucumber.json",
-                "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
-        dryRun = false, monochrome = true )
+                "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"}
+        )
 public class CucumberRunner {
 }
 
