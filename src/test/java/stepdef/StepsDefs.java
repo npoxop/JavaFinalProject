@@ -79,9 +79,8 @@ public class StepsDefs {
     private static final String userId = "88ea6102-ee19-4bea-b396-0f7b9427a26d";
     private static final String isbn = "9781449325862";
     private static String token;
-    private static String bookId;
 
-    @И("^пользователь авторизуется с валидным логином")
+    @И("^пользователь авторизуется с валидным логином и паролем")
     public void loginWithRealPassword() {
         RestAssured.baseURI = url;
         RequestSpecification request = given();
@@ -102,14 +101,14 @@ public class StepsDefs {
         token = JsonPath.from(getResponseText).get("token");
     }
 
-    @И("^пользователь авторизуется с невалидным логином")
+    @И("^пользователь авторизуется с валидным логином и не валидным паролем")
     public void loginWithFakePassword() {
         RestAssured.baseURI = url;
         RequestSpecification request = given();
         request.header("Content-Type", "application/json");
         response = request.body("{ \"userName\":\"" + userName + "\", \"password\":\"" + fake_password + "\"}")
                 .post("/Account/v1/Authorized");
-        Assert.assertEquals(400, response.getStatusCode());
+        Assert.assertEquals(404, response.getStatusCode());
     }
 
     @И("получаем список книг без авторизации")
@@ -141,20 +140,7 @@ public class StepsDefs {
         request.header("Authorization", "Bearer " + token)
                 .header("Content-Type", "application/json");
         response = request.body("{ \"isbn\": \"" + isbn + "\", \"userId\": \"" + userId + "\"}")
-                .delete("/BookStore/v1/Books");
+                .delete("/BookStore/v1/Book");
         Assert.assertEquals(204, response.getStatusCode());
-    }
-
-
-    @И("добавляем книгу")
-    public void добавляемКнигу() {
-        given()
-                .accept("application/json")
-                .contentType("application/json")
-                .body("{ \"userId\": \"String\", \"collectionOfIsbns\": [ { \"isbn\": \"9781449325862\" } ]}")
-                .when()
-                .post("https://demoqa.com/BookStore/v1/Books")
-                .then()
-                .log().all();
     }
 }
