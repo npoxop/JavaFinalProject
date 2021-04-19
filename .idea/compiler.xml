@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="newbdd" />
+        <module name="JavaFinalProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="newbdd" target="8" />
+      <module name="JavaFinalProject" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
