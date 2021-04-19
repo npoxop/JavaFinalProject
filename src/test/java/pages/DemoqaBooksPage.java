@@ -1,4 +1,4 @@
-package stepdef.pages;
+package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
