@@ -20,6 +20,13 @@ public class Hooks {
         Configuration.startMaximized = true;
         Configuration.timeout=10000;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "89.0";
+        Configuration.remote = "http://188.130.155.80:4444/wd/hub";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
     }
 
     @After
