@@ -8,7 +8,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Hooks {
 
