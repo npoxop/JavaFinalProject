@@ -5,9 +5,9 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -17,7 +17,7 @@ public class Hooks {
 
     public static WebDriver driver;
 
-    @BeforeEach
+    @BeforeStep
     public static void TimeCount() {
         Timestamp time = new Timestamp(System.currentTimeMillis());
         System.out.println(time);
