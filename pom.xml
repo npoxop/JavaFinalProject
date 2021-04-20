@@ -106,7 +106,7 @@
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                     <systemProperties>
-                        <allure.results.directory>${project.build.directory}/target/allure-results</allure.results.directory>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemProperties>
                     <argLine>
                         -Dfile.encoding=UTF-8
@@ -128,7 +128,7 @@
                 <version>2.9</version>
                 <configuration>
                     <reportVersion>2.7.0</reportVersion>
-                    <resultsDirectory>${basedir}/target/allure-results</resultsDirectory>
+                    <resultsDirectory>${basedir}/allure-results</resultsDirectory>
                 </configuration>
             </plugin>
             <plugin>
