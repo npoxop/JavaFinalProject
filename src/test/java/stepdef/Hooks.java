@@ -16,7 +16,8 @@ public class Hooks {
 
     @Before
     public static void setUp(Scenario scenario) {
-        System.setProperty("webdriver.chrome.driver", "drv/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "drv/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         Configuration.startMaximized = true;
         Configuration.timeout=10000;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
