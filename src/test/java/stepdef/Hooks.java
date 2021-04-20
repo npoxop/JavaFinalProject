@@ -7,12 +7,21 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.sql.Timestamp;
 
 public class Hooks {
 
     public static WebDriver driver;
+
+    @BeforeEach
+    public static void TimeCount() {
+        Timestamp time = new Timestamp(System.currentTimeMillis());
+        System.out.println(time);
+    }
 
     @Before
     public static void setUp(Scenario scenario) {
