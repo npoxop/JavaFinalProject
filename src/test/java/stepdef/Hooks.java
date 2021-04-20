@@ -5,29 +5,20 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.sql.Timestamp;
-
 public class Hooks {
 
     public static WebDriver driver;
-
-    @BeforeStep
-    public static void TimeCount() {
-        Timestamp time = new Timestamp(System.currentTimeMillis());
-        System.out.println(time);
-    }
 
     @Before
     public static void setUp(Scenario scenario) {
         System.setProperty("webdriver.chrome.driver", "drv/chromedriver.exe");
         Configuration.startMaximized = true;
-        Configuration.timeout=10000;
+        Configuration.timeout=20000;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browser = "chrome";
         Configuration.browserVersion = "89.0";
